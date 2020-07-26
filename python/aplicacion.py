@@ -4,6 +4,8 @@ app=Flask(__name__)
 
 @app.route("/")
 def index():
-	return "Hola mundo!!!!"
+	return "Hola mundo!!!"
 
-app.run()
+@app.route("/Richard")
+def Richard():
+	return "Hola Richard"
