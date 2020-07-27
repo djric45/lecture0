@@ -4,5 +4,10 @@ app=Flask(__name__)
 
 @app.route("/")
 def index():
-	return render_template("hello2.html")
+	headline = "Hello, world"
+	return render_template("hello3.html", headline=headline)
 
+@app.route("/adios")
+def adios():
+	headline = "adios"
+	return render_template("hello3.html", headline=headline)
