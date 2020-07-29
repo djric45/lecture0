@@ -6,7 +6,10 @@ app=Flask(__name__)
 def index():
 	return render_template("hello4.html")
 
-@app.route("/hello", methods=["POST"])
+@app.route("/hello", methods=["GET", "POST"])
 def hello():
-	name = request.form.get("name")
-	return render_template("hello5.html", name=name)
+		if request.method == "GET":
+			return "Por favor agregar nombre"
+		else:
+			name = request.form.get("name")
+			return render_template("hello5.html", name=name)
